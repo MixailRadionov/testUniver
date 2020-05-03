@@ -1,0 +1,42 @@
+@startuml
+Institution o— Student
+Institution o— Course
+Institution o— Lecturer
+Course —> Student
+Course -left- Student
+Course -right-Lecturer
+class Institution { 
+- name: String
+- listStudents: List<Student>
+- listLecturers: List<Lecturer>
+- listCourses: List<Course>
++ getName(): String
++ setListStudents(): List<Student>
++ setListLecturers(): List<Lecturer>
++ setListCourses(): List<Course>
+}
+class Lecturer {
+- name: String
+- listCourses: List<Course>
+- listStudents: List<Student>
++ getName(): String
++ getListCourses(): List<Course>
++ getListStudents(): List<Student>
+}
+class Student {
+- name: String
+- listCourses: List<Course>
+- listLecturers: List<Lecturer>
++ getName(): String
++ getListCourses(): List<Course>
++ getListLecturers(): List<Lecturer>
+}
+class Course { 
+- name: String
+- listStudents: List<Student>
+- listLecturers: List<Lecturer>
++ array getName(): String
++ getListStudents(): List<Student>
++ getListLecturers(): List<Lecturer>
+}
+@enduml 
